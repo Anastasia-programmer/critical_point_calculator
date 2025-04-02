@@ -59,8 +59,8 @@ export default function MathWebsite() {
   const [expandCritical, setExpandCritical] = useState(false);
 
   const examples = [
-    { name: "Paraboloid", func: "x^2 + y^2" }, // Minimum at (0,0)
-    { name: "Saddle", func: "x^2 - y^2" }, // Saddle point at (0,0)
+    { name: "Paraboloid", func: "x^2 + y^2" },
+    { name: "Saddle", func: "x^2 - y^2" },
     { name: "Teacher's Example", func: "x^3 + y^3-3x-3y" },
   ];
 
@@ -231,7 +231,6 @@ export default function MathWebsite() {
     criticalPoints: { point: string; type: string }[]
   ) => {
     try {
-      // Create grid of points
       const points = 50;
       const xValues: number[] = [];
       const yValues: number[] = [];
@@ -242,7 +241,6 @@ export default function MathWebsite() {
         yValues.push(i);
       }
 
-      // Calculate z values - create a 2D matrix
       for (let i = 0; i < xValues.length; i++) {
         zMatrix[i] = [];
         for (let j = 0; j < yValues.length; j++) {
@@ -259,7 +257,6 @@ export default function MathWebsite() {
         }
       }
 
-      // Prepare critical points for plotting
       const cpX: number[] = [];
       const cpY: number[] = [];
       const cpZ: number[] = [];
@@ -362,7 +359,6 @@ export default function MathWebsite() {
 
   return (
     <main className={`min-h-screen bg-[#111133] text-white ${inter.className}`}>
-      {/* Top wavy shape */}
       <div className="absolute top-0 left-0 w-full h-24 md:h-32 overflow-hidden z-0">
         <svg
           viewBox="0 0 500 150"
@@ -402,9 +398,9 @@ export default function MathWebsite() {
           </p>
         </div>
 
-        {/* Main Explorer */}
+        {/*  Explorer */}
         <div className="flex flex-col lg:flex-row gap-8 mx-auto max-w-7xl">
-          {/* Left Column: Input and Viz */}
+          {/* Left Column: Input  */}
           <div className="flex-1 relative z-10">
             {/* Function Input */}
             <div className="mb-8 backdrop-blur-lg bg-white/5 rounded-xl border border-white/10 p-6 shadow-xl">
@@ -811,8 +807,8 @@ export default function MathWebsite() {
                       </div>
                     )}
                   </div>
-   {/* Hessian Matrix */}
-   <div className="space-y-3">
+                  {/* Hessian Matrix */}
+                  <div className="space-y-3">
                     <div className="h-px bg-gradient-to-r from-indigo-500/50 to-transparent"></div>
                     <h3 className="text-lg font-semibold text-indigo-300">
                       Hessian Determinant
