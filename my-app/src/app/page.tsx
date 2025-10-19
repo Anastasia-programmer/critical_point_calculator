@@ -358,68 +358,62 @@ export default function MathWebsite() {
 
   return (
     <main className={`min-h-screen bg-[#111133] text-white ${inter.className}`}>
-      <div className="absolute top-0 left-0 w-full h-24 md:h-32  z-0 grid md:grid-cols-2">
-        <svg
-          viewBox="0 0 500 150"
-          preserveAspectRatio="none"
-          className="h-full w-full"
-        >
-          <path
-            d="M0.00,49.98 C150.00,150.00 349.20,-50.00 500.00,49.98 L500.00,0.00 L0.00,0.00 Z"
-            className="fill-purple-600/30"
-          ></path>
-          <path
-            d="M0.00,49.98 C150.00,120.00 270.00,-20.00 500.00,49.98 L500.00,0.00 L0.00,0.00 Z"
-            className="fill-fuchsia-600/20"
-          ></path>
-        </svg>
+    {/* Top Waves */}
+    <div className="absolute top-0 left-0 w-full h-20 sm:h-24 md:h-32 z-0 grid md:grid-cols-2">
+      <svg viewBox="0 0 500 150" preserveAspectRatio="none" className="h-full w-full">
+        <path
+          d="M0.00,49.98 C150.00,150.00 349.20,-50.00 500.00,49.98 L500.00,0.00 L0.00,0.00 Z"
+          className="fill-purple-600/30"
+        />
+        <path
+          d="M0.00,49.98 C150.00,120.00 270.00,-20.00 500.00,49.98 L500.00,0.00 L0.00,0.00 Z"
+          className="fill-fuchsia-600/20"
+        />
+      </svg>
+    </div>
+
+    <div className="container mx-auto px-3 sm:px-4 pt-16 sm:pt-20 pb-10 sm:pb-12 relative z-10">
+      {/* Header */}
+      <div className="m-6 sm:m-10 md:m-16 relative">
+        <div className="absolute top-1/2 left-1/4 transform -translate-x-1/2 -translate-y-1/2 w-32 sm:w-48 h-32 sm:h-48 rounded-full bg-gradient-to-br from-purple-500/20 to-pink-500/20 blur-3xl"></div>
+        <div className="absolute top-1/2 right-1/4 transform translate-x-1/2 -translate-y-1/2 w-40 sm:w-64 h-40 sm:h-64 rounded-full bg-gradient-to-tl from-indigo-500/20 to-cyan-500/20 blur-3xl"></div>
+
+        <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight mb-4 sm:mb-6 text-center relative">
+          <span className="bg-clip-text text-transparent bg-gradient-to-r from-fuchsia-500 via-purple-500 to-indigo-500">
+            Critical Points
+          </span>
+          <br />
+          <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-blue-500 to-violet-600">
+            Explorer
+          </span>
+        </h1>
+
+        <p className="text-base sm:text-lg md:text-xl max-w-2xl mx-auto text-center text-cyan-100/80">
+          Discover, visualize, and analyze the critical points of multivariable
+          functions in a new dimension.
+        </p>
       </div>
 
-      <div className="container mx-auto px-4 pt-20 pb-12 relative z-10">
-        {/* Header with floating shapes */}
-        <div className="m-16 relative">
-          <div className="absolute top-1/2 left-1/4 transform -translate-x-1/2 -translate-y-1/2 w-48 h-48 rounded-full bg-gradient-to-br from-purple-500/20 to-pink-500/20 blur-3xl"></div>
-          <div className="absolute top-1/2 right-1/4 transform translate-x-1/2 -translate-y-1/2 w-64 h-64 rounded-full bg-gradient-to-tl from-indigo-500/20 to-cyan-500/20 blur-3xl"></div>
+      {/* Explorer */}
+      <div className="flex flex-col lg:flex-row gap-6 sm:gap-8 mx-auto max-w-7xl overflow-x-hidden">
+        {/* Left Column */}
+        <div className="flex-1 relative z-10 space-y-8">
+          {/* Function Input */}
+          <div className="backdrop-blur-lg bg-white/5 rounded-xl border border-white/10 p-4 sm:p-6 shadow-xl">
+            <div className="flex items-center gap-3 mb-4">
+              <Calculator className="h-5 w-5 sm:h-6 sm:w-6 text-fuchsia-400" />
+              <h2 className="text-xl sm:text-2xl font-bold text-white">Function Input</h2>
+            </div>
 
-          <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight mb-6 text-center relative">
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-fuchsia-500 via-purple-500 to-indigo-500">
-              Critical Points
-            </span>
-            <br />
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-blue-500 to-violet-600">
-              Explorer
-            </span>
-          </h1>
-
-          <p className="text-xl max-w-2xl mx-auto text-center text-cyan-100/80">
-            Discover, visualize and analyze the critical points of multivariable integer
-            functions in a new dimension
-          </p>
-        </div>
-
-        {/*  Explorer */}
-        <div className="flex flex-col lg:flex-row gap-8 mx-auto max-w-7xl">
-          {/* Left Column: Input  */}
-          <div className="flex-1 relative z-10">
-            {/* Function Input */}
-            <div className="mb-8 backdrop-blur-lg bg-white/5 rounded-xl border border-white/10 p-6 shadow-xl">
-              <div className="flex items-center gap-4 mb-4">
-                <Calculator className="h-6 w-6 text-fuchsia-400" />
-                <h2 className="text-2xl font-bold text-white">
-                  Function Input
-                </h2>
-              </div>
-
-              <div className="mb-6">
-                <div className="flex items-center gap-3 mb-2">
-                  <label className="text-lg font-bold text-fuchsia-300">
-                    f(x,y) =
-                  </label>
-                  <div className="relative flex-1">
+            <div className="mb-6 space-y-4">
+              <div className="flex flex-col sm:flex-row sm:items-center gap-3">
+                <div className="flex-1">
+                  <label className="text-lg mr-2 font-bold text-fuchsia-300">f(x,y) =</label>
+                  <div className="relative inline-block w-full sm:w-auto flex-1">
                     <Input
                       value={inputFunction}
                       onChange={(e) => setInputFunction(e.target.value)}
-                      className="border-0 bg-white/10 text-white placeholder:text-white/40 focus-visible:ring-fuchsia-500"
+                      className="border-0 rounded bg-white/10 text-white placeholder:text-white/40 focus-visible:ring-fuchsia-500"
                       placeholder="Select from Examples"
                       readOnly
                     />
@@ -432,274 +426,205 @@ export default function MathWebsite() {
                       </button>
                     )}
                   </div>
-
-                  <div className="flex gap-2">
-                    <Button
-                      onClick={() => setShowExamples(!showExamples)}
-                      variant="ghost"
-                      className="text-fuchsia-300 font-bold hover:text-fuchsia-100 hover:bg-fuchsia-900/30 cursor-pointer"
-                    >
-                      <Lightbulb className="h-4 w-4 mr-1" /> Examples
-                    </Button>
-
-                    <Button
-                      onClick={randomizeExample}
-                      variant="ghost"
-                      className="text-cyan-300 font-bold hover:text-cyan-100 hover:bg-cyan-900/30 cursor-pointer"
-                    >
-                      <Dices className="h-4 w-4 mr-1" /> Random
-                    </Button>
-                  </div>
                 </div>
 
-                {showExamples && (
-                  <div className="p-4 rounded-lg bg-black/20 backdrop-blur mb-4 border border-purple-500/20">
-                    <div className="flex flex-wrap gap-2">
-                      {examples.map((example, index) => (
-                        <button
-                          key={index}
-                          onClick={() => applyExample(example.func)}
-                          className="bg-purple-900/40 hover:bg-purple-800/60 text-white py-1 px-3 rounded text-sm border border-purple-500/30 transition-colors cursor-pointer"
-                        >
-                          {example.name}
-                        </button>
-                      ))}
-                    </div>
-                  </div>
-                )}
+                <div className="flex gap-2 justify-end sm:justify-start">
+                  <Button
+                    onClick={() => setShowExamples(!showExamples)}
+                    variant="ghost"
+                    className="text-fuchsia-300 font-bold hover:text-fuchsia-100 hover:bg-fuchsia-900/30 cursor-pointer"
+                  >
+                    <Lightbulb className="h-4 w-4 mr-1" /> Examples
+                  </Button>
 
-                <div className="flex items-center gap-3">
-                  <label className="text-sm font-bold text-cyan-300">
-                    Plot Range :
-                  </label>
-                  <Input
-                    type="number"
-                    value={plotRange}
-                    onChange={(e) =>
-                      setPlotRange(Number.parseFloat(e.target.value) || 5)
-                    }
-                    className=" cursor-pointer w-20 h-8 text-sm bg-black/20 border-0 focus-visible:ring-cyan-500"
-                    min="1"
-                    max="20"
-                    step="1"
-                  />
-                  <span className="text-sm text-cyan-100/70">
-                    ± {plotRange} on each axis
-                  </span>
-
-                  <div className="ml-auto">
-                    <Button
-                      onClick={calculateDerivativesAndCriticalPoints}
-                      disabled={isCalculating}
-                      className="bg-gradient-to-r from-fuchsia-600 to-cyan-600 hover:from-fuchsia-700 hover:to-cyan-700 shadow-lg shadow-fuchsia-700/20 text-white border-0 cursor-pointer"
-                    >
-                      {isCalculating ? (
-                        <span className="flex items-center gap-2">
-                          <span className="animate-spin h-4 w-4 border-2 border-white border-t-transparent rounded-full"></span>
-                          Processing...
-                        </span>
-                      ) : (
-                        <span className=" font-bold flex items-center gap-2">
-                          <Sparkles className="h-4 w-4" />
-                          Analyze Function
-                        </span>
-                      )}
-                    </Button>
-                  </div>
+                  <Button
+                    onClick={randomizeExample}
+                    variant="ghost"
+                    className="text-cyan-300 font-bold hover:text-cyan-100 hover:bg-cyan-900/30 cursor-pointer"
+                  >
+                    <Dices className="h-4 w-4 mr-1" /> Random
+                  </Button>
                 </div>
               </div>
 
-              {error && (
-                <Alert className="bg-red-900/40 border-red-500/50">
-                  <Info className="h-4 w-4 text-red-400" />
-                  <AlertDescription className="text-red-200">
-                    {error}
-                  </AlertDescription>
-                </Alert>
+              {showExamples && (
+                <div className="p-4 rounded-lg bg-black/20 backdrop-blur mb-4 border border-purple-500/20">
+                  <div className="flex flex-wrap gap-2">
+                    {examples.map((example, index) => (
+                      <button
+                        key={index}
+                        onClick={() => applyExample(example.func)}
+                        className="bg-purple-900/40 hover:bg-purple-800/60 text-white py-1 px-3 rounded text-sm border border-purple-500/30 transition-colors cursor-pointer"
+                      >
+                        {example.name}
+                      </button>
+                    ))}
+                  </div>
+                </div>
               )}
+
+              <div className="flex flex-col sm:flex-row sm:items-center gap-3">
+                <label className="text-sm font-bold text-cyan-300">Plot Range :</label>
+                <Input
+                  type="number"
+                  value={plotRange}
+                  onChange={(e) => setPlotRange(Number.parseFloat(e.target.value) || 5)}
+                  className="cursor-pointer w-20 h-8 text-sm bg-black/20 border-0 focus-visible:ring-cyan-500"
+                  min="1"
+                  max="20"
+                  step="1"
+                />
+                <span className="text-sm text-cyan-100/70">± {plotRange} on each axis</span>
+
+                <div className="sm:ml-auto">
+                  <Button
+                    onClick={calculateDerivativesAndCriticalPoints}
+                    disabled={isCalculating}
+                    className="bg-gradient-to-r from-fuchsia-600 to-cyan-600 hover:from-fuchsia-700 hover:to-cyan-700 shadow-lg shadow-fuchsia-700/20 text-white border-0 cursor-pointer"
+                  >
+                    {isCalculating ? (
+                      <span className="flex items-center gap-2">
+                        <span className="animate-spin h-4 w-4 border-2 border-white border-t-transparent rounded-full"></span>
+                        Processing...
+                      </span>
+                    ) : (
+                      <span className="font-bold flex items-center gap-2">
+                        <Sparkles className="h-4 w-4" />
+                        Analyze Function
+                      </span>
+                    )}
+                  </Button>
+                </div>
+              </div>
             </div>
 
-            {plotData && (
-              <div className="backdrop-blur-lg bg-white/5 rounded-xl border border-white/10 p-6 shadow-xl">
-                <div className="mb-4">
-                  <h2 className="text-2xl font-bold text-white mb-2">
-                    3D Visualization
-                  </h2>
-                  <p className="text-cyan-100/70 text-lg">
-                    Interactive visualization of the function surface with
-                    highlighted critical points
-                  </p>
-                </div>
+            {error && (
+              <Alert className="bg-red-900/40 border-red-500/50">
+                <Info className="h-4 w-4 text-red-400" />
+                <AlertDescription className="text-red-200">{error}</AlertDescription>
+              </Alert>
+            )}
+          </div>
 
-                <div className="bg-black/20 rounded-lg border border-white/5 overflow-hidden h-[500px] shadow-inner relative">
-                  <Plot
-                    data={plotData}
-                    layout={{
-                      paper_bgcolor: "rgba(0,0,0,0)",
-                      plot_bgcolor: "rgba(0,0,0,0)",
-                      font: {
-                        family: "Inter, system-ui, sans-serif",
-                        color: "rgba(255,255,255,0.8)",
-                      },
-                      margin: { l: 0, r: 0, b: 0, t: 60 },
-                      title: {
-                        text: `f(x,y) = ${inputFunction}`,
-                        font: {
-                          family: "Inter, system-ui, sans-serif",
-                          size: 16,
-                          color: "rgba(255,255,255,0.8)",
-                        },
-                        y: 0.95,
-                        yanchor: "top",
-                        x: 0.5,
-                        xanchor: "center",
-                      },
-                      scene: {
-                        xaxis: {
-                          title: "x",
-                          gridcolor: "rgba(255,255,255,0.1)",
-                          zerolinecolor: "rgba(255,255,255,0.3)",
-                          backgroundcolor: "rgba(0,0,0,0)",
-                          color: "rgba(255,255,255,0.8)",
-                        },
-                        yaxis: {
-                          title: "y",
-                          gridcolor: "rgba(255,255,255,0.1)",
-                          zerolinecolor: "rgba(255,255,255,0.3)",
-                          backgroundcolor: "rgba(0,0,0,0)",
-                          color: "rgba(255,255,255,0.8)",
-                        },
-                        zaxis: {
-                          title: "f(x,y)",
-                          gridcolor: "rgba(255,255,255,0.1)",
-                          zerolinecolor: "rgba(255,255,255,0.3)",
-                          backgroundcolor: "rgba(0,0,0,0)",
-                          color: "rgba(255,255,255,0.8)",
-                        },
-                        camera: {
-                          eye: { x: 1.5, y: 1.5, z: 1 },
-                        },
-                        aspectratio: { x: 1, y: 1, z: 0.8 },
-                        annotations: [],
-                      },
-                      showlegend: false,
-                    }}
-                    config={{
-                      responsive: true,
-                      displaylogo: false,
-                      toImageButtonOptions: {
-                        format: "png",
-                        filename: `function-${inputFunction}`,
-                        height: 800,
-                        width: 1200,
-                        scale: 2,
-                      },
-                    }}
-                    style={{ width: "100%", height: "100%" }}
-                  />
-                </div>
+          {/* 3D Visualization */}
+          {plotData && (
+            <div className="backdrop-blur-lg bg-white/5 rounded-xl border border-white/10 p-4 sm:p-6 shadow-xl">
+              <div className="mb-3 sm:mb-4">
+                <h2 className="text-xl sm:text-2xl font-bold text-white mb-2">3D Visualization</h2>
+                <p className="text-cyan-100/70 text-sm sm:text-lg">
+                  Interactive visualization of the function surface with critical points
+                </p>
+              </div>
 
-                <div className="font-bold mt-4 flex flex-wrap items-center gap-4 bg-black/20 p-3 rounded-lg">
-                  <div className="flex items-center gap-1.5">
-                    <span className="w-3 h-3 rounded-full bg-red-500"></span>
-                    <span className="text-sm text-white/85">Maximum</span>
-                  </div>
-                  <div className="flex items-center gap-1.5">
-                    <span className="w-3 h-3 rounded-full bg-green-500"></span>
-                    <span className="text-sm text-white/85">Minimum</span>
-                  </div>
-                  <div className="flex items-center gap-1.5">
-                    <span className="w-3 h-3 rounded-full bg-blue-500"></span>
-                    <span className="text-sm text-white/85">Saddle</span>
-                  </div>
-                  <div className="flex items-center gap-1.5">
-                    <span className="w-3 h-3 rounded-full bg-yellow-500"></span>
-                    <span className="text-sm text-white/85">Inconclusive</span>
-                  </div>
-                  <div className="ml-auto text-xs text-white/50 hidden md:block">
-                    <span className="italic">
-                      Tip: Click & drag to rotate • Scroll to zoom
-                    </span>
-                  </div>
+              <div className="bg-black/20 rounded-lg border border-white/5 overflow-hidden h-[280px] sm:h-[400px] md:h-[500px] shadow-inner relative">
+                <Plot
+                  data={plotData}
+                  layout={{
+                    paper_bgcolor: "rgba(0,0,0,0)",
+                    plot_bgcolor: "rgba(0,0,0,0)",
+                    font: { family: "Inter, system-ui, sans-serif", color: "rgba(255,255,255,0.8)" },
+                    margin: { l: 0, r: 0, b: 0, t: 60 },
+                    title: {
+                      text: `f(x,y) = ${inputFunction}`,
+                      font: { size: 16, color: "rgba(255,255,255,0.8)" },
+                      y: 0.95,
+                      x: 0.5,
+                      xanchor: "center",
+                    },
+                    scene: {
+                      xaxis: { title: "x", color: "rgba(255,255,255,0.8)" },
+                      yaxis: { title: "y", color: "rgba(255,255,255,0.8)" },
+                      zaxis: { title: "f(x,y)", color: "rgba(255,255,255,0.8)" },
+                      camera: { eye: { x: 1.5, y: 1.5, z: 1 } },
+                    },
+                    showlegend: false,
+                  }}
+                  config={{
+                    responsive: true,
+                    displaylogo: false,
+                  }}
+                  style={{ width: "100%", height: "100%" }}
+                />
+              </div>
+
+              <div className="font-bold mt-4 flex flex-wrap items-center gap-3 sm:gap-4 bg-black/20 p-3 rounded-lg">
+                <div className="flex items-center gap-1.5">
+                  <span className="w-3 h-3 rounded-full bg-red-500"></span>
+                  <span className="text-sm text-white/85">Maximum</span>
+                </div>
+                <div className="flex items-center gap-1.5">
+                  <span className="w-3 h-3 rounded-full bg-green-500"></span>
+                  <span className="text-sm text-white/85">Minimum</span>
+                </div>
+                <div className="flex items-center gap-1.5">
+                  <span className="w-3 h-3 rounded-full bg-blue-500"></span>
+                  <span className="text-sm text-white/85">Saddle</span>
+                </div>
+                <div className="flex items-center gap-1.5">
+                  <span className="w-3 h-3 rounded-full bg-yellow-500"></span>
+                  <span className="text-sm text-white/85">Inconclusive</span>
+                </div>
+                <div className="ml-auto text-xs text-white/50 hidden sm:block italic">
+                  Tip: Drag to rotate • Pinch to zoom
                 </div>
               </div>
-            )}
-            {/* Explanation */}
-            <div className=" mt-8 backdrop-blur-lg bg-white/5 rounded-xl border border-white/10 p-6 shadow-xl">
-              <div className="space-y-4">
-                <h3 className="text-xl font-bold text-white">
-                  Understanding Critical Points
-                </h3>
-                <p className="text-white/70 font-semibold">
-                  Critical points occur where the gradient equals zero (∇f = 0).
-                  These points can be:
-                </p>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
-                  <div className="bg-gradient-to-b from-red-900/30 to-transparent rounded-lg p-4 border border-red-500/20">
-                    <div className="mb-2">
-                      <svg
-                        viewBox="0 0 100 100"
-                        width="40"
-                        height="40"
-                        className="mx-auto"
-                      >
-                        <path
-                          d="M50,90 L90,30 L10,30 Z"
-                          fill="rgba(248,113,113,0.5)"
-                        />
-                      </svg>
-                    </div>
-                    <div className="font-bold text-red-300">Local Maximum</div>
-                    <p className="text-xs text-white/70 mt-1">
-                      Higher than all nearby points
-                    </p>
+            </div>
+          )}
+
+          {/* Explanation */}
+          <div className="mt-6 sm:mt-8 backdrop-blur-lg bg-white/5 rounded-xl border border-white/10 p-4 sm:p-6 shadow-xl">
+            <div className="space-y-4">
+              <h3 className="text-lg sm:text-xl font-bold text-white">
+                Understanding Critical Points
+              </h3>
+              <p className="text-white/70 font-semibold text-sm sm:text-base">
+                Critical points occur where the gradient equals zero (∇f = 0). These points can be:
+              </p>
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4 text-center">
+                {/* Cards */}
+                {/* Maximum */}
+                <div className="bg-gradient-to-b from-red-900/30 to-transparent rounded-lg p-4 border border-red-500/20">
+                  <div className="mb-2">
+                    <svg viewBox="0 0 100 100" width="40" height="40" className="mx-auto">
+                      <path d="M50,90 L90,30 L10,30 Z" fill="rgba(248,113,113,0.5)" />
+                    </svg>
                   </div>
-                  <div className="bg-gradient-to-b from-green-900/30 to-transparent rounded-lg p-4 border border-green-500/20">
-                    <div className="mb-2">
-                      <svg
-                        viewBox="0 0 100 100"
-                        width="40"
-                        height="40"
-                        className="mx-auto rotate-180"
-                      >
-                        <path
-                          d="M50,90 L90,30 L10,30 Z"
-                          fill="rgba(74,222,128,0.5)"
-                        />
-                      </svg>
-                    </div>
-                    <div className="font-bold text-green-300">
-                      Local Minimum
-                    </div>
-                    <p className="text-xs text-white/70 mt-1">
-                      Lower than all nearby points
-                    </p>
+                  <div className="font-bold text-red-300">Local Maximum</div>
+                  <p className="text-xs text-white/70 mt-1">Higher than all nearby points</p>
+                </div>
+
+                {/* Minimum */}
+                <div className="bg-gradient-to-b from-green-900/30 to-transparent rounded-lg p-4 border border-green-500/20">
+                  <div className="mb-2">
+                    <svg viewBox="0 0 100 100" width="40" height="40" className="mx-auto rotate-180">
+                      <path d="M50,90 L90,30 L10,30 Z" fill="rgba(74,222,128,0.5)" />
+                    </svg>
                   </div>
-                  <div className="bg-gradient-to-b from-blue-900/30 to-transparent rounded-lg p-4 border border-blue-500/20">
-                    <div className="mb-2">
-                      <svg
-                        viewBox="0 0 100 50"
-                        width="40"
-                        height="30"
-                        className="mx-auto"
-                      >
-                        <path
-                          d="M0,25 Q25,0 50,25 Q75,50 100,25"
-                          stroke="rgba(96,165,250,0.7)"
-                          fill="none"
-                          strokeWidth="4"
-                        />
-                      </svg>
-                    </div>
-                    <div className="font-bold text-blue-300">Saddle Point</div>
-                    <p className="text-xs text-white/70 mt-1">
-                      Maximum in one direction, minimum in another
-                    </p>
+                  <div className="font-bold text-green-300">Local Minimum</div>
+                  <p className="text-xs text-white/70 mt-1">Lower than all nearby points</p>
+                </div>
+
+                {/* Saddle */}
+                <div className="bg-gradient-to-b from-blue-900/30 to-transparent rounded-lg p-4 border border-blue-500/20">
+                  <div className="mb-2">
+                    <svg viewBox="0 0 100 50" width="40" height="30" className="mx-auto">
+                      <path
+                        d="M0,25 Q25,0 50,25 Q75,50 100,25"
+                        stroke="rgba(96,165,250,0.7)"
+                        fill="none"
+                        strokeWidth="4"
+                      />
+                    </svg>
                   </div>
+                  <div className="font-bold text-blue-300">Saddle Point</div>
+                  <p className="text-xs text-white/70 mt-1">
+                    Maximum in one direction, minimum in another
+                  </p>
                 </div>
               </div>
             </div>
           </div>
+        </div>
 
           {/* Right Column: Derivatives and Critical Points */}
           <div className="lg:w-2/5 space-y-8">
