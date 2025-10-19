@@ -62,6 +62,10 @@ export default function MathWebsite() {
     { name: "Paraboloid", func: "x^2 + y^2" },
     { name: "Saddle", func: "x^2 - y^2" },
     { name: "Teacher's Example", func: "x^3 + y^3-3x-3y" },
+    {name :"Fourth Order", func: "x^4 + y^4 - 4*x^2 - 4*y^2" },
+    { name: "Double Well", func: "(x^2 - 1)^2 + (y^2 - 1)^2" },
+    { name: "Asymmetric Saddle", func: "x^2 - 2*y^2" }, 
+    { name: "Steep Valley", func: "x^2 + 10*y^2" } 
   ];
 
   const calculateDerivativesAndCriticalPoints = () => {
