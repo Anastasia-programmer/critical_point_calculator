@@ -303,12 +303,7 @@ export default function MathWebsite() {
         name: "Function Surface",
         showscale: false,
         contours: {
-          z: {
-            show: true,
-            usecolormap: true,
-            highlightcolor: "white",
-            project: { z: true },
-          },
+          coloring: "fill",
         },
       };
 
@@ -393,7 +388,7 @@ export default function MathWebsite() {
           </h1>
 
           <p className="text-xl max-w-2xl mx-auto text-center text-cyan-100/80">
-            Discover, visualize and analyze the critical points of multivariable
+            Discover, visualize and analyze the critical points of multivariable integer
             functions in a new dimension
           </p>
         </div>
