@@ -420,7 +420,8 @@ export default function MathWebsite() {
                       value={inputFunction}
                       onChange={(e) => setInputFunction(e.target.value)}
                       className="border-0 bg-white/10 text-white placeholder:text-white/40 focus-visible:ring-fuchsia-500"
-                      placeholder="Enter a function (e.g., x^2 + y^2)"
+                      placeholder="Select from Examples"
+                      readOnly
                     />
                     {inputFunction && (
                       <button
