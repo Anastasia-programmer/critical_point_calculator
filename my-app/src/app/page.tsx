@@ -1,10 +1,10 @@
 "use client";
-import { useState } from "react";
-import nerdamer from "nerdamer";
-import { Inter } from "next/font/google";
-const inter = Inter({ subsets: ["latin"] });
 
+import { useState } from "react";
+import dynamic from "next/dynamic";
+import nerdamer from "nerdamer";
 import "nerdamer/all";
+import { Inter } from "next/font/google";
 import {
   Calculator,
   Info,
@@ -19,10 +19,13 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
 import { Alert, AlertDescription } from "@/components/ui/alert";
-import dynamic from "next/dynamic";
 
+const inter = Inter({ subsets: ["latin"] });
+
+// ✅ Dynamically import Plotly to avoid SSR hydration errors
 const Plot = dynamic(() => import("react-plotly.js"), { ssr: false });
 
+// ✅ TypeScript: Define Plotly interface globally (optional but clean)
 declare global {
   interface Plotly {
     Data: Partial<import("plotly.js").Data>;
