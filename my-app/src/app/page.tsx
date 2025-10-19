@@ -358,7 +358,7 @@ export default function MathWebsite() {
 
   return (
     <main className={`min-h-screen bg-[#111133] text-white ${inter.className}`}>
-      <div className="absolute top-0 left-0 w-full h-24 md:h-32 overflow-hidden z-0">
+      <div className="absolute top-0 left-0 w-full h-24 md:h-32  z-0 grid md:grid-cols-2">
         <svg
           viewBox="0 0 500 150"
           preserveAspectRatio="none"
@@ -377,11 +377,11 @@ export default function MathWebsite() {
 
       <div className="container mx-auto px-4 pt-20 pb-12 relative z-10">
         {/* Header with floating shapes */}
-        <div className="mb-16 relative">
+        <div className="m-16 relative">
           <div className="absolute top-1/2 left-1/4 transform -translate-x-1/2 -translate-y-1/2 w-48 h-48 rounded-full bg-gradient-to-br from-purple-500/20 to-pink-500/20 blur-3xl"></div>
           <div className="absolute top-1/2 right-1/4 transform translate-x-1/2 -translate-y-1/2 w-64 h-64 rounded-full bg-gradient-to-tl from-indigo-500/20 to-cyan-500/20 blur-3xl"></div>
 
-          <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight mb-6 text-center relative">
+          <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight mb-6 text-center relative">
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-fuchsia-500 via-purple-500 to-indigo-500">
               Critical Points
             </span>
