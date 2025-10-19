@@ -359,7 +359,7 @@ export default function MathWebsite() {
   return (
     <main className={`min-h-screen bg-[#111133] text-white ${inter.className}`}>
     {/* Top Waves */}
-    <div className="absolute top-0 left-0 w-full h-20 sm:h-24 md:h-32 z-0 grid md:grid-cols-2">
+    <div className="absolute top-0 left-0 w-full h-20 sm:h-24 md:h-32 z-0 grid ">
       <svg viewBox="0 0 500 150" preserveAspectRatio="none" className="h-full w-full">
         <path
           d="M0.00,49.98 C150.00,150.00 349.20,-50.00 500.00,49.98 L500.00,0.00 L0.00,0.00 Z"
@@ -395,7 +395,7 @@ export default function MathWebsite() {
       </div>
 
       {/* Explorer */}
-      <div className="flex flex-col lg:flex-row gap-6 sm:gap-8 mx-auto max-w-7xl overflow-x-hidden">
+      <div className="flex flex-col xl:flex-row gap-6 sm:gap-8 mx-auto max-w-7xl ">
         {/* Left Column */}
         <div className="flex-1 relative z-10 space-y-8">
           {/* Function Input */}
@@ -407,9 +407,9 @@ export default function MathWebsite() {
 
             <div className="mb-6 space-y-4">
               <div className="flex flex-col sm:flex-row sm:items-center gap-3">
-                <div className="flex-1">
+                <div className="flex-1 ">
                   <label className="text-lg mr-2 font-bold text-fuchsia-300">f(x,y) =</label>
-                  <div className="relative inline-block w-full sm:w-auto flex-1">
+                  <div className="relative mt-2 inline-block w-full sm:w-auto flex-1">
                     <Input
                       value={inputFunction}
                       onChange={(e) => setInputFunction(e.target.value)}
@@ -428,7 +428,7 @@ export default function MathWebsite() {
                   </div>
                 </div>
 
-                <div className="flex gap-2 justify-end sm:justify-start">
+                <div className="flex flex-wrap gap-2 justify-end sm:justify-start">
                   <Button
                     onClick={() => setShowExamples(!showExamples)}
                     variant="ghost"
@@ -464,7 +464,7 @@ export default function MathWebsite() {
               )}
 
               <div className="flex flex-col sm:flex-row sm:items-center gap-3">
-                <label className="text-sm font-bold text-cyan-300">Plot Range :</label>
+                <label className="text-sm font-bold text-cyan-300">Plot Range:</label>
                 <Input
                   type="number"
                   value={plotRange}
@@ -476,25 +476,26 @@ export default function MathWebsite() {
                 />
                 <span className="text-sm text-cyan-100/70">± {plotRange} on each axis</span>
 
-                <div className="sm:ml-auto">
-                  <Button
-                    onClick={calculateDerivativesAndCriticalPoints}
-                    disabled={isCalculating}
-                    className="bg-gradient-to-r from-fuchsia-600 to-cyan-600 hover:from-fuchsia-700 hover:to-cyan-700 shadow-lg shadow-fuchsia-700/20 text-white border-0 cursor-pointer"
-                  >
-                    {isCalculating ? (
-                      <span className="flex items-center gap-2">
-                        <span className="animate-spin h-4 w-4 border-2 border-white border-t-transparent rounded-full"></span>
-                        Processing...
-                      </span>
-                    ) : (
-                      <span className="font-bold flex items-center gap-2">
-                        <Sparkles className="h-4 w-4" />
-                        Analyze Function
-                      </span>
-                    )}
-                  </Button>
-                </div>
+                <div className="w-full flex justify-center sm:m-auto px-3 sm:px-0">
+  <Button
+    onClick={calculateDerivativesAndCriticalPoints}
+    disabled={isCalculating}
+    className="w-full sm:w-auto bg-gradient-to-r from-fuchsia-600 to-cyan-600 hover:from-fuchsia-700 hover:to-cyan-700 shadow-lg shadow-fuchsia-700/20 text-white border-0 cursor-pointer overflow-hidden"
+  >
+    {isCalculating ? (
+      <span className="flex items-center justify-center gap-2">
+        <span className="animate-spin h-4 w-4 border-2 border-white border-t-transparent rounded-full"></span>
+        Processing...
+      </span>
+    ) : (
+      <span className="font-bold flex items-center justify-center gap-2">
+        <Sparkles className="h-4 w-4" />
+        Analyze Function
+      </span>
+    )}
+  </Button>
+</div>
+
               </div>
             </div>
 
@@ -627,7 +628,7 @@ export default function MathWebsite() {
         </div>
 
           {/* Right Column: Derivatives and Critical Points */}
-          <div className="lg:w-2/5 space-y-8">
+          <div className="xl:w-2/5   space-y-8">
             {/* Equations Section */}
             <div className="backdrop-blur-lg bg-white/5 rounded-xl border border-white/10 p-6 shadow-xl">
               <button
